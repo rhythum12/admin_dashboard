@@ -47,9 +47,26 @@ const Sidebar = ({
     useEffect(() => {
         setActive(pathname.substring(1));
       }, [pathname]);
-  return <Box component="nav">
-     {/* TODO: video 1 hour 10 minutes*/}
-  </Box>
-};
-
+      return <Box component="nav">
+        {isSidebarOpen && (
+            <Drawer
+            open={isSidebarOpen}
+            onClose={() => setIsSidebarOpen(false)}
+            variant="persistent"
+            anchor="left"
+            sx={{
+                width: drawerWidth,
+                "& .MuiDrawer-paper": {
+                    color: theme.palette.secondary[200],
+                    backgroundColor: theme.palette.background.alt,
+                    boxSizing: "border-box",
+                    borderWidth: isNonMobile ? 0 : "2px",
+                    width: drawerWidth
+                }
+            }}
+            ></Drawer>
+        )}
+      </Box>
+    };
+asdasd
 export default Sidebar
