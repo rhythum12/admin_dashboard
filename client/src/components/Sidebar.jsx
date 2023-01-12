@@ -129,7 +129,7 @@ const Sidebar = ({
                         <FlexBetween color={theme.palette.secondary.main}>
                             <Box display="flex" alignItems="center" gap="0.5rem">
                                 <Typography variant="h4" fontWeight="bold">
-                                    AshminStore
+                                    Ashmin Store
                                 </Typography>
                             </Box>
                             {!isNonMobile && (
@@ -195,4 +195,3 @@ const Sidebar = ({
     };
 
 export default Sidebar
-//1:28

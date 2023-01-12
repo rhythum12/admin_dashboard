@@ -8,7 +8,10 @@ import { setMode } from "state";
 import profileImage from "assets/profile.jpeg"
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({
+    isSidebarOpen,
+    setIsSidebarOpen,
+}) => {
     const dispatch = useDispatch();
     const theme = useTheme();
   return <AppBar
@@ -21,7 +24,7 @@ const Navbar = () => {
     <Toolbar sx={{ justifyContent: "space-between"}}>
         {/* Left Side */}
         <FlexBetween>
-            <IconButton onClick={() => console.log('open/close side bar')}>
+            <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                 <MenuIcon />
                 <FlexBetween
                     backgroundColor={theme.palette.background.alt}
