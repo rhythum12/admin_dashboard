@@ -125,7 +125,7 @@ const Sidebar = ({
             }}
             >
                 <Box width="100%">
-                    <Box m="15rem 2rem 2rem 3rem">
+                    <Box m="1.5rem 2rem 2rem 3rem">
                         <FlexBetween color={theme.palette.secondary.main}>
                             <Box display="flex" alignItems="center" gap="0.5rem">
                                 <Typography variant="h4" fontWeight="bold">
@@ -148,8 +148,45 @@ const Sidebar = ({
                                     </Typography>
                                 )
                             }
+                            const lcText = text.toLowerCase();
 
-                        }} //1.22mmin
+                            return (
+                                <ListItem key={text} disablePadding>
+                                    <ListItemButton
+                                        onClick={() => { 
+                                            navigate(`/${lcText}`);
+                                            setActive(lcText);
+                                        }}
+                                        sx={{
+                                            backgroundColor:
+                                             active === lcText
+                                              ? theme.palette.secondary[300]
+                                              : "transparent",
+                                            color: 
+                                                    active === lcText 
+                                                      ? theme.palette.primary[600] 
+                                                      : theme.palette.secondary[100],
+                                        }}
+                                        >
+                                            <ListItemIcon
+                                                sx={{
+                                                    ml: "2rem",
+                                                    color: 
+                                                    active === lcText 
+                                                      ? theme.palette.primary[600] 
+                                                      : theme.palette.secondary[200],
+                                                }}
+                                            >
+                                                {icon}
+                                            </ListItemIcon>
+                                            <ListItemText primary={text} />
+                                            {active === lcText && (
+                                                <ChevronRightOutlined sx={{ ml: "auto"}}/>
+                                            )}
+                                        </ListItemButton>
+                                </ListItem>
+                            )
+                        })} 
                     </List>
                 </Box>
             </Drawer>
@@ -158,3 +195,4 @@ const Sidebar = ({
     };
 
 export default Sidebar
+//1:28
