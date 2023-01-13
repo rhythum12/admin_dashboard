@@ -93,6 +93,7 @@ const navItems = [
 ]
 
 const Sidebar = ({
+    //1:56
     drawerWidth,
     isSidebarOpen,
     setIsSidebarOpen,
