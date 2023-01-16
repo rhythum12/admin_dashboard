@@ -20,6 +20,8 @@ import {
   dataOverallStat,
   dataAffiliateStat,
 } from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
 
 /* Configurations */
 
@@ -50,6 +52,8 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+   // Product.insertMany(dataProduct);
+   // ProductStat.insertMany(dataProductStat);
     /* Only Add Data One Time */
     //User.insertMany(dataUser);
   })
