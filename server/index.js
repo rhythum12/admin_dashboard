@@ -52,8 +52,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-   // Product.insertMany(dataProduct);
-   // ProductStat.insertMany(dataProductStat);
+    /* Insert in database */
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
     /* Only Add Data One Time */
     //User.insertMany(dataUser);
   })
