@@ -12,9 +12,11 @@ export const getProducts = async (req, res) => {
         });
         return {
           ...product._doc,
+          stat,
         };
       })
     );
+    res.status(200).json(productWithStats);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
