@@ -26,6 +26,8 @@ function App() {
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
+      <BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }
